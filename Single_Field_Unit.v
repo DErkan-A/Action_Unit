@@ -1,6 +1,6 @@
 module Single_Field_Unit#(DATA_WIDTH=32, ADDR_WIDTH=2)( //Combination of a Instruction memory and Logic Unit
     input clk, bit_map_in, WE,
-    input [1:0] PDR_ID,
+    input [ADDR_WIDTH-1:0] PDR_ID, // Used as address
     input [DATA_WIDTH-1:0] Header_Field_In,
     input [DATA_WIDTH+3:0] WD, // Write data for overwriting the mem
     input [ADDR_WIDTH-1:0] W_ADDR,

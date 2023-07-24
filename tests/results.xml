@@ -1,8 +1,6 @@
 <testsuites name="results">
   <testsuite name="all" package="all">
-    <property name="random_seed" value="1689612466" />
-    <testcase name="au_basic_test" classname="SFU_cocotb_test" file="D:\School\Tez\Action_Unit\tests\SFU_cocotb_test.py" lineno="38" time="0.004003286361694336" sim_time_ns="31000" ratio_time="7743637.901256626">
-      <failure />
-    </testcase>
+    <property name="random_seed" value="1690194641" />
+    <testcase name="au_basic_test" classname="SFU_cocotb_test" file="D:\School\Tez\Action_Unit\tests\SFU_cocotb_test.py" lineno="38" time="0.004003047943115234" sim_time_ns="41000" ratio_time="10242195.59261465" />
   </testsuite>
 </testsuites>

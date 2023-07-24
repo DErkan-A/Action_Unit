@@ -56,7 +56,7 @@ async def au_basic_test(dut):
     dut.WD.value = vec
     dut.W_ADDR.value = 0
     await posclkedge
-    
+    dut.WE.value = 0
     await negclkedge
     #check if the module added the values correctly   
     assert dut.bit_map_out.value == dut.bit_map_in.value
@@ -65,6 +65,7 @@ async def au_basic_test(dut):
     dut.bit_map_in.value = 1
     vec.binstr = "00010000000000000000000000000000"
     dut.WD.value = vec
+    dut.WE.value = 1
     dut.W_ADDR.value = 1
     await posclkedge
     await negclkedge
@@ -75,14 +76,16 @@ async def au_basic_test(dut):
     assert dut.bit_map_out.value == 0
     assert dut.Header_Field_Out.value == dut.Header_Field_In.value
 
-    dut.PDR_ID.value = 1
+    vec.binstr = "001000000000000000000000000000010000"
+    dut.WD.value = vec
+
     await posclkedge
     await negclkedge
 
     print_func(dut)
     print_func_lu(dut)
-    assert dut.bit_map_out.value == 0
-    assert dut.Header_Field_Out.value == dut.Header_Field_In.value
+    assert dut.bit_map_out.value == 1
+    assert dut.Header_Field_Out.value == 16
     
     #You can print individuals bits with the below syntax
     #print(dut.Q[0].value,dut.Q[1].value,dut.Q[2].value)

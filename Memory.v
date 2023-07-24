@@ -6,7 +6,7 @@ input [DATA_WIDTH-1:0] WD,
 output [DATA_WIDTH-1:0] RD 
 );
 
-reg [DATA_WIDTH-1:0] mem [(2^ADDR_WIDTH)-1:0];
+reg [DATA_WIDTH-1:0] mem [(2**ADDR_WIDTH)-1:0];
 
 assign RD = mem[ADDR];
 
