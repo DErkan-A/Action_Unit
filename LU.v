@@ -8,8 +8,8 @@ module LU #(parameter WIDTH=8)
 	  output reg bit_map_out
     );
 
-parameter No_Change=4'b0000, // Lets the inputs pass to output
-		  Remove=4'b0001, // Unsets the bitmap position
+parameter Remove=4'b0000, // Lets the inputs pass to output
+		  No_Change=4'b0001, // Unsets the bitmap position
 		  Add_Modify=4'b0010; // Changing and adding is the same operation
 	 
 always@(*) begin
