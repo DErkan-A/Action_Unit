@@ -41,7 +41,7 @@ async def au_basic_test(dut):
     #Generate the clock MUST ADD MEMORY INITIALIZATION STEPS OR USE READMEMH !!!!!!!!!!!!!!!!!!!!!!!
     await cocotb.start(Clock(dut.clk, 10, 'us').start(start_high=False))
     vec = BinaryValue(value=0,n_bits=36)
-    #vec.binstr = "00010000000000000000000000000000"
+    vec.binstr = "00010000000000000000000000000000"
     print(vec.binstr)
     #set clkedge as the falling edge for triggers
     negclkedge = FallingEdge(dut.clk)
@@ -63,7 +63,7 @@ async def au_basic_test(dut):
     assert dut.Header_Field_Out.value == dut.Header_Field_In.value
 
     dut.bit_map_in.value = 1
-    vec.binstr = "00010000000000000000000000000000"
+    vec.binstr = "00000000000000000000000000000000"
     dut.WD.value = vec
     dut.WE.value = 1
     dut.W_ADDR.value = 1
